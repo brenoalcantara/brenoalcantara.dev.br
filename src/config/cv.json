@@ -1,42 +1,72 @@
 {
     "basic": {
-        "name": "Paul Smith",
-        "job": "Software Engineer",
-        "summary": "Transforming challenges into opportunities with cutting-edge technology. Driven by a love for elegant, robust code.",
-        "cv_file_name": "paul_cv.pdf"
+        "name": "Breno S. de Alcântara",
+        "job": "Engenheiro de Software",
+        "summary": "Há mais de 10 anos desenvolvendo soluções tecnológicas com eficiênca para transformar desafios em oportunidades de crescimento.",
+        "cv_file_name": "Curriculo.pdf"
     },
     "experiences": [
         {
-            "title": "Senior Software Engineer",
-            "sub_title": "Tech Solutions Inc.",
-            "years": "2021 - Present",
-            "details": "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS."
+            "title": "Desenvolvedor Sênior",
+            "sub_title": "3RWX Desenvolvimento de Sistemas.",
+            "years": "2022 - Presente",
+            "details": "Sistema de Gestão Educacional: manutenção contínua e desenvolvimento de novas funcionalidades, visando aprimorar a experiência de uso e a eficiência operacional do sistema, voltado para a administração educacional municipal. Desenvolvido em PHP com banco de dados PostgreSQL, o sistema oferece uma solução robusta e adaptável às necessidades das redes públicas de ensino."
         },
         {
-            "title": "Software Engineer",
-            "sub_title": "Innovate Labs",
-            "years": "2018 - 2021",
-            "details": "Developed and maintained web applications for various clients. Key contributor in migrating legacy systems to cloud infrastructure."
+            "title": "Analista Consultor Pleno III",
+            "sub_title": "TO Brasil",
+            "years": "2021 - 2022",
+            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (legado), com banco de dados MySQL e Shell Script."
         },
         {
-            "title": "Junior Developer",
-            "sub_title": "Creative Apps Studio",
-            "years": "2015 - 2018",
-            "details": "Worked on mobile app development, collaborating with design teams to create user-friendly applications."
+            "title": "Desenvolvedor Sênior",
+            "sub_title": "Blueshift Brasil",
+            "years": "2019 - 2021",
+            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (legado), com banco de dados MySQL e Shell Script."
+        },
+        {
+            "title": "Gerente de Desenvolvimento de Sistemas",
+            "sub_title": "Prefeitura Municipal de Maricá",
+            "years": "2017 - 2019",
+            "details": "Liderança da equipe de desenvolvimento de sistemas e participação ativa no Comitê Gestor de Tecnologia da Informação."
+        },
+        {
+            "title": "Analista de Sistemas",
+            "sub_title": "PSBI",
+            "years": "2016 - 2017",
+            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (legado), com banco de dados MySQL e Shell Script."
+        },
+        {
+            "title": "Programador",
+            "sub_title": "DBSeller Sistemas Integrados",
+            "years": "2015 - 2016",
+            "details": "Sistema de Gestão Municipal E-cidade: desenvolvimento e manutenção de funcionalidades, migração de dados e suporte técnico ao setor de atendimento, contribuindo para o aprimoramento e a integração da gestão municipal."
+        },
+        {
+            "title": "Programador PHP",
+            "sub_title": "Piloti",
+            "years": "2011 - 2015",
+            "details": "Criação e manutenção de sites institucionais, intranets e APIs RESTful para aplicações, com uso de Symfony (PHP) e MySQL."
         }
     ],
     "education": [
         {
-            "title": "Bachelor of Science in Computer Science",
-            "sub_title": "University of Modern Tech",
-            "years": "2015 - 2019",
-            "details": "Graduated with honors. Specialized in software development, data structures, and algorithms. Worked on various open-source projects and completed internships in tech companies."
+            "title": "Engenharia de Software",
+            "sub_title": "Universidade Estácio de Sá",
+            "years": "2025 - 2028",
+            "details": "Curso que aborda a computação voltada para a especificação, desenvolvimento, manutenção e criação de softwares, com foco na organização, produtividade e qualidade organizacionais."
         },
         {
-            "title": "Master of Science in Software Engineering",
-            "sub_title": "Global Tech Institute",
-            "years": "2019 - 2021",
-            "details": "Focused on advanced algorithms, cloud computing, and full-stack development. Published research papers on scalable microservices architecture."
+            "title": "Treinamento MySQL",
+            "sub_title": "ADV Informática",
+            "years": "2012",
+            "details": "Curso intensivo destinado aos que desejam trabalhar com gerenciamento de dados (DBA)."
+        },
+        {
+            "title": "Desenvolvimento Web",
+            "sub_title": "SENAC RIO",
+            "years": "2009",
+            "details": "Curso Livre de Desenvolvimento Web, compreendendo desde os fundamentos do desenvolvimento front-end com HTML, CSS e Javascript, até técnicas avançadas de programação back-end com PHP, além do banco de dados MySQL."
         }
     ],
     "projects": [
@@ -61,7 +91,7 @@
     ],
     "menuItems": [
         {
-            "name": "About",
+            "name": "Home",
             "link": "/"
         },
         {
@@ -72,15 +102,11 @@
     "socialLinks": [
         {
             "iconName": "Github",
-            "link": "https://github.com/wasutz/astro-resume-theme"
+            "link": "https://github.com/brenoalcantara"
         },
         {
-            "iconName": "Facebook",
-            "link": "https://facebook.com"
-        },
-        {
-            "iconName": "Instagram",
-            "link": "https://instagram.com"
+            "iconName": "Linkedin",
+            "link": "https://br.linkedin.com/in/breno-silva-de-alcantara"
         }
     ]
 }

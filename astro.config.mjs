@@ -7,5 +7,5 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: "https://astro-resume-theme.netlify.app",
-  integrations: [tailwind(), icon(), mdx(), sitemap()]
+  integrations: [tailwind(), icon({customIconsDir: 'src/icons',}), mdx(), sitemap()]
 });
