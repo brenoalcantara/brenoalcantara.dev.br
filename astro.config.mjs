@@ -6,6 +6,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: "https://astro-resume-theme.netlify.app",
+  site: "https://brenoalcantara.github.io",
+  base: 'brenoalcantara.dev.br',
   integrations: [tailwind(), icon({customIconsDir: 'src/icons',}), mdx(), sitemap()]
 });
