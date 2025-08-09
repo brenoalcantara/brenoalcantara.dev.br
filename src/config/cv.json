@@ -2,27 +2,27 @@
     "basic": {
         "name": "Breno S. de Alcântara",
         "job": "Engenheiro de Software",
-        "summary": "Há mais de 10 anos desenvolvendo soluções tecnológicas com eficiênca para transformar desafios em oportunidades de crescimento.",
-        "cv_file_name": "Curriculo.pdf"
+        "summary": "Há mais de 10 anos desenvolvendo soluções tecnológicas com eficiência para transformar desafios em oportunidades de crescimento.",
+        "cv_file_name": "Curriculum.pdf"
     },
     "experiences": [
         {
             "title": "Desenvolvedor Sênior",
             "sub_title": "3RWX Desenvolvimento de Sistemas.",
             "years": "2022 - Presente",
-            "details": "Sistema de Gestão Educacional: manutenção contínua e desenvolvimento de novas funcionalidades, visando aprimorar a experiência de uso e a eficiência operacional do sistema, voltado para a administração educacional municipal. Desenvolvido em PHP com banco de dados PostgreSQL, o sistema oferece uma solução robusta e adaptável às necessidades das redes públicas de ensino."
+            "details": "Sistema de Gestão Educacional: manutenção contínua e desenvolvimento de novas funcionalidades, visando aprimorar a experiência de uso e a eficiência operacional do sistema, voltado para a administração educacional municipal. Desenvolvido em PHP (Codeigniter) com banco de dados PostgreSQL, o sistema oferece uma solução robusta e adaptável às necessidades das redes públicas de ensino."
         },
         {
             "title": "Analista Consultor Pleno III",
             "sub_title": "TO Brasil",
             "years": "2021 - 2022",
-            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (legado), com banco de dados MySQL e Shell Script."
+            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (Laravel), com banco de dados MySQL e Shell Script."
         },
         {
             "title": "Desenvolvedor Sênior",
             "sub_title": "Blueshift Brasil",
             "years": "2019 - 2021",
-            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (legado), com banco de dados MySQL e Shell Script."
+            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (Laravel), com banco de dados MySQL e Shell Script."
         },
         {
             "title": "Gerente de Desenvolvimento de Sistemas",
@@ -34,7 +34,7 @@
             "title": "Analista de Sistemas",
             "sub_title": "PSBI",
             "years": "2016 - 2017",
-            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (legado), com banco de dados MySQL e Shell Script."
+            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (Laravel), com banco de dados MySQL e Shell Script."
         },
         {
             "title": "Programador",
