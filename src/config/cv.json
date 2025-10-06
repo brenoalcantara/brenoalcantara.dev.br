@@ -107,6 +107,10 @@
         {
             "iconName": "Linkedin",
             "link": "https://br.linkedin.com/in/breno-silva-de-alcantara"
+        },
+        {
+            "iconName": "Whatsapp",
+            "link": "https://api.whatsapp.com/send?phone=5521981345475"
         }
     ]
 }
