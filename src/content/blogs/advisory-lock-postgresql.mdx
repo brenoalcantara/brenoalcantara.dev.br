@@ -1,0 +1,208 @@
+---
+title: "Advisory Lock global no PostgreSQL"
+description: "Uma solução para evitar registros duplicados no PostgreSQL."
+datetime: "2026-02-23"
+image: ../images/blogs/PostgreSQL.png
+url: "/blog/advisory-lock-postgresql"
+---
+
+# Advisory Lock no PostgreSQL
+
+Imagine o seguinte cenário:
+
+* Uma aplicação PHP 7.4 desenvolvida com Codeigniter 3 (código legado);
+* Load balance (contêineres concorrendo sem restrição na estrutura da tabela PostgreSQL);
+* Sem chave única; sem poder alterar estrutura; sem poder fazer selects (alguns milhares) antes do insert.
+
+## Qual seria a solução para evitar registros duplicados?
+
+A solução que encontrei é simples. Advisory Lock global no PostgreSQL. 
+O Advisory Lock controla a concorrência no nível lógico. Ele não depende de índice. Ele não bloqueia a tabela inteira. Ele impede que duas transações executem a mesma operação crítica ao mesmo tempo. 
+Neste tutorial você aprenderá como implementar um Lock Global no CodeIgniter 3, passo a passo.
+
+A função usada aqui é:
+
+> pg_try_advisory_xact_lock
+
+Ela retorna true se conseguiu o lock e, retorna false se outra transação já possui o lock. Ela não espera, ela falha imediatamente.
+
+Isso resolveu o meu problema de concorrência entre contêineres.
+
+## Por que usar lock global?
+
+Use lock global quando:
+
+* Você quer um único writer por vez;
+* Você quer impedir inserts concorrentes;
+* Você quer falha imediata;
+
+Fluxo da solução:
+
+1. Iniciar transação;
+2. Tentar adquirir o advisory lock;
+3. Se falhar, fazer rollback e encerrar;
+4. Se obtiver o lock, executar o insert;
+5. Commit.
+
+Quando a transação termina, o lock é liberado automaticamente.
+
+### Passo 1 - crie uma library para o lock:
+
+Presumindo que uses o PostgreSQL no seu projeto, crie o arquivo:
+
+> application/libraries/PgLock.php
+
+```php
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Classe de bloqueio lógico para controle de concorrência entre aplicações
+ * distribuídas.
+ * 
+ * @version 1.0
+ * 
+ */
+class PgLock
+{
+    protected $CI;
+    
+    /**
+	 * Método construtor
+	 * 
+	 * @return $this
+	 */
+	public function __construct()
+    {
+        $this->CI =& get_instance();
+    }
+
+    /**
+     * Tenta obter lock global
+     * 
+     * @param string $key
+     * 
+     * @return boolean
+     */
+    public function acquireGlobalLock($key)
+    {
+        $sql = "
+            SELECT pg_try_advisory_xact_lock(
+                hashtext(?)
+            ) AS locked
+        ";
+
+        $query = $this->CI->db->query($sql, [$key]);
+
+        return (bool) $query->row()->locked;
+    }
+}
+```
+
+### O que esse código faz?
+
+* Converte sua chave textual em hash;
+* Tenta adquirir o lock na transação atual;
+* Retorna true ou false.
+
+A função hashtext garante que todos os containers gerem o mesmo valor para a mesma chave.
+
+### Passo 2 - use o lock dentro da transação:
+
+Exemplo em um model qualquer:
+
+```php 
+<?php
+
+class Pedido_model extends CI_Model
+{
+    public function salvar($dados)
+    {
+        $this->db->trans_begin();
+
+        $this->load->library('PgLock');
+
+        $locked = $this->pglock->acquireGlobalLock('APP:PEDIDO:WRITE');
+
+        if (!$locked) {
+            $this->db->trans_rollback();
+            return false;
+        }
+
+        $this->db->insert('pedidos', $dados);
+
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            return false;
+        }
+
+        $this->db->trans_commit();
+
+        return true;
+    }
+}
+```
+
+### O que acontece aqui?
+
+* A primeira requisição obtém o lock
+* A segunda requisição recebe false
+* Nenhuma requisição fica aguardando
+* Nenhum insert duplicado é executado
+
+### Teste prático no banco
+
+Abra duas sessões no PostgreSQL.
+
+### Sessão 1:
+
+```sql
+BEGIN;
+SELECT pg_try_advisory_xact_lock(hashtext('APP:PEDIDO:WRITE'));
+```
+
+O resultado será true.
+
+### Sessão 2:
+
+```sql
+BEGIN;
+SELECT pg_try_advisory_xact_lock(hashtext('APP:PEDIDO:WRITE'));
+```
+
+O resultado será false.
+
+Isso demonstra que o lock global funciona entre conexões diferentes.
+
+### Boas práticas
+
+* Sempre inicie a transação antes do lock;
+* Sempre finalize com commit ou rollback;
+* Mantenha a transação curta;
+* Não faça chamadas externas dentro da transação;
+* Use uma chave de lock clara e padronizada.
+
+### Quando usar essa abordagem?
+
+Use quando:
+
+* Sua aplicação roda com autoscaling;
+* Você não pode alterar a estrutura das tabelas;
+* Você precisa controlar concorrência entre containers;
+* Você quer evitar múltiplos selects.
+
+### Impacto em performance
+
+O Advisory Lock é leve, não trava tabela. Ele trava apenas a chave lógica definida por você. O impacto é menor que LOCK TABLE.
+
+Você reduz:
+
+* Espera por lock;
+* Deadlocks;
+* Duplicidade de registros;
+* Carga desnecessária de leitura.
+
+Com isso, você mantém controle de concorrência no nível da aplicação, sem alterar o banco e sem sacrificar desempenho.
+
+E assim, chegamos ao fim do tutorial, espero que tenhas gostado. Obrigado e até a próxima postagem!
