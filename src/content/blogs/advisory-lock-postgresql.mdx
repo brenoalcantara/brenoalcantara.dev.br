@@ -106,7 +106,7 @@ class PgLock
 * Tenta adquirir o lock na transação atual;
 * Retorna true ou false.
 
-A função hashtext garante que todos os containers gerem o mesmo valor para a mesma chave.
+A função hashtext garante que todos os contêineres gerem o mesmo valor para a mesma chave.
 
 ### Passo 2 - use o lock dentro da transação:
 
@@ -189,7 +189,7 @@ Use quando:
 
 * Sua aplicação roda com autoscaling;
 * Você não pode alterar a estrutura das tabelas;
-* Você precisa controlar concorrência entre containers;
+* Você precisa controlar concorrência entre contêineres;
 * Você quer evitar múltiplos selects.
 
 ### Impacto em performance
