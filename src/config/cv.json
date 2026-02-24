@@ -2,7 +2,7 @@
     "basic": {
         "name": "Breno S. de Alcântara",
         "job": "Engenheiro de Software",
-        "summary": "Há mais de 10 anos desenvolvendo soluções tecnológicas com eficiência para transformar desafios em oportunidades de crescimento.",
+        "summary": "Desenvolvedor de software com mais de 10 anos de experiência, trabalhando em projetos utilizados por milhares de usuários. Atuação com PHP (Laravel, Slim, Codeigniter, Symfony), bancos de dados relacionais (PostgreSQL e MySQL), Shell Script (extração de dados) e liderança técnica com histórico de entrega de sistemas críticos, melhoria de processos e suporte à tomada de decisão.",
         "cv_file_name": "Curriculum.pdf"
     },
     "experiences": [
@@ -10,43 +10,43 @@
             "title": "Desenvolvedor Sênior",
             "sub_title": "3RWX Desenvolvimento de Sistemas.",
             "years": "2022 - Presente",
-            "details": "Sistema de Gestão Educacional: manutenção contínua e desenvolvimento de novas funcionalidades, visando aprimorar a experiência de uso e a eficiência operacional do sistema, voltado para a administração educacional municipal. Desenvolvido em PHP (Codeigniter) com banco de dados PostgreSQL, o sistema oferece uma solução robusta e adaptável às necessidades das redes públicas de ensino."
+            "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Gestão Educacional, utilizado por uma administração municipal com mais de 70 unidades escolares. Desenvolvimento em PHP 7.4 (CodeIgniter 3) e PostgreSQL, com foco em estabilidade, escalabilidade e suporte a operações críticas do ambiente educacional."
         },
         {
             "title": "Analista Consultor Pleno III",
             "sub_title": "TO Brasil",
             "years": "2021 - 2022",
-            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (Laravel), com banco de dados MySQL e Shell Script."
+            "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Business Intelligence, usado por diversas áreas estratégicas de uma grande corporação do setor varejista. Desenvolvimento em PHP 5.6, 7.0 (Laravel), MySQL e Shell Script com suporte à tomada de decisão por meio de relatórios analíticos, processando grandes volumes de dados."
         },
         {
             "title": "Desenvolvedor Sênior",
             "sub_title": "Blueshift Brasil",
             "years": "2019 - 2021",
-            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (Laravel), com banco de dados MySQL e Shell Script."
+            "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Business Intelligence, usado por diversas áreas estratégicas de uma grande corporação do setor varejista. Desenvolvimento em PHP 5.6, 7.0 (Laravel), MySQL e Shell Script com suporte à tomada de decisão por meio de relatórios analíticos, processando grandes volumes de dados."
         },
         {
             "title": "Gerente de Desenvolvimento de Sistemas",
             "sub_title": "Prefeitura Municipal de Maricá",
             "years": "2017 - 2019",
-            "details": "Liderança da equipe de desenvolvimento de sistemas e participação ativa no Comitê Gestor de Tecnologia da Informação."
+            "details": "Liderança da equipe de desenvolvimento de sistemas da Prefeitura de Maricá, coordenando dezenas de projetos internos e evoluções de sistemas corporativos. Atuação como membro do Comitê Gestor de Tecnologia da Informação, contribuindo para decisões estratégicas e padronização de soluções utilizadas por diferentes secretarias e órgãos municipais."
         },
         {
             "title": "Analista de Sistemas",
             "sub_title": "PSBI",
             "years": "2016 - 2017",
-            "details": "Sistema de Business Intelligence: manutenção e desenvolvimento de relatórios e rotinas de extração de dados para um dos principais sistemas de apoio à tomada de decisões do cliente. Desenvolvido em PHP (Laravel), com banco de dados MySQL e Shell Script."
+            "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Business Intelligence, usado por diversas áreas estratégicas de uma grande corporação do setor varejista. Desenvolvimento em PHP 5.6, 7.0 (Laravel), MySQL e Shell Script com suporte à tomada de decisão por meio de relatórios analíticos, processando grandes volumes de dados."
         },
         {
             "title": "Programador",
             "sub_title": "DBSeller Sistemas Integrados",
             "years": "2015 - 2016",
-            "details": "Sistema de Gestão Municipal E-cidade: desenvolvimento e manutenção de funcionalidades, migração de dados e suporte técnico ao setor de atendimento, contribuindo para o aprimoramento e a integração da gestão municipal."
+            "details": "Atuação no desenvolvimento e manutenção do Sistema de Gestão Municipal e-Cidade, usado por milhares de colaboradores da Prefeitura de Niterói, incluindo criação de funcionalidades, migração de dados e suporte técnico. Contribuição direta para melhor integração e eficiência dos processos administrativos municipais."
         },
         {
             "title": "Programador PHP",
             "sub_title": "Piloti",
             "years": "2011 - 2015",
-            "details": "Criação e manutenção de sites institucionais, intranets e APIs RESTful para aplicações, com uso de Symfony (PHP) e MySQL."
+            "details": "Atuação no desenvolvimento e manutenção de dezenas de sites institucionais e APIs RESTful, com o uso de PHP (Symfony e Codeigniter) e MySQL."
         }
     ],
     "education": [
