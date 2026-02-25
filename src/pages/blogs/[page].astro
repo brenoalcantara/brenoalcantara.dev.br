@@ -24,7 +24,12 @@ export interface Props {
 const { page } = Astro.props;
 ---
 
-<Layout title={`Blogs`}>
+<Layout 
+    charset="UTF-8" 
+    title={`Blogs`} 
+    description="Lista de posts do blog pessoal de Breno de Alcântara"
+    keywords="php, desenvolvimento web, codeigniter 3, laravel, symfony, shell script, postgresql, mysql"
+>
 	<BlogList blogs={page?.data || []} />
     <Pagination page={page} />
 </Layout>

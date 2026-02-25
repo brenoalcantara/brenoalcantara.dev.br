@@ -6,6 +6,8 @@ const blogsCollection = defineCollection({
       description: z.string(),
       datetime: z.string(),
       image: z.string().optional(),
+      charset: z.string().default("UTF-8"),
+      keywords: z.string().optional(), 
     }),
 
 });

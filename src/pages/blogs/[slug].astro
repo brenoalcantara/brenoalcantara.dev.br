@@ -28,7 +28,11 @@ const {blog} = Astro.props;
 const {Content} = await blog.render();
 ---
 
-<Layout title={blog.data.title}>
+<Layout charset="UTF-8" 
+    title={blog.data.title} 
+    description={blog.data.description}
+    keywords={blog.data.keywords}
+>
     <section class="flex justify-center mt-12">
         <div id="markdown" class="prose prose-lg overflow-visible relative mb-5">
             <Content />

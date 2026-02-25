@@ -4,23 +4,41 @@ import Footer from '../components/layouts/Footer.astro';
 
 import '../styles/index.css';
 
+import { SEO } from "astro-seo";
+
 interface Props {
 	title: string;
+	charset: string;
+	description?: string;
+	keywords?: string; 
 }
 
-const { title } = Astro.props;
+const { title, charset, description, keywords } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="h-full" data-theme="light">
 	<head>
-		<meta charset="UTF-8" />
+		<!-- <meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{title}</title> -->
+		<SEO
+			charset={charset}
+      		title={title}
+      		description={description}
+			extend={{
+				meta: [
+				{
+					name: "keywords",
+					content: keywords,
+				},
+				],
+			}}
+    	/>
 
 		<!-- initialize theme -->
 		<script is:inline>
