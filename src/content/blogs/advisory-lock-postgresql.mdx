@@ -12,20 +12,20 @@ keywords: "advisory lock, postgresql, lock table, codeigniter 3, pg_try_advisory
 Imagine o seguinte cenário:
 
 * Uma aplicação PHP 7.4 desenvolvida com Codeigniter 3 (código legado);
-* Load balance (contêineres concorrendo sem restrição na estrutura da tabela PostgreSQL);
-* Sem chave única; sem poder alterar estrutura; sem poder fazer selects (alguns milhares) antes do insert.
+* Load balance (contêineres concorrendo sem restrição na estrutura de tabelas do PostgreSQL);
+* Sem chave única; sem poder alterar a estrutura; sem poder fazer selects (alguns milhares) antes do insert.
 
 ## Qual seria a solução para evitar registros duplicados?
 
-A solução que encontrei é simples. Advisory Lock global no PostgreSQL. 
-O Advisory Lock controla a concorrência no nível lógico. Ele não depende de índice. Ele não bloqueia a tabela inteira. Ele impede que duas transações executem a mesma operação crítica ao mesmo tempo. 
+A solução que encontrei é simples: Advisory Lock global no PostgreSQL. 
+O Advisory Lock controla a concorrência no nível lógico, não depende de índice, não bloqueia a tabela inteira. Ele impede que duas transações executem a mesma operação crítica ao mesmo tempo. 
 Neste tutorial você aprenderá como implementar um Lock Global no CodeIgniter 3, passo a passo.
 
-A função usada aqui é:
+A função usada aqui é a:
 
 > pg_try_advisory_xact_lock
 
-Ela retorna true se conseguiu o lock e, retorna false se outra transação já possui o lock. Ela não espera, ela falha imediatamente.
+Ela retorna true se conseguiu o lock e, retorna false se outra transação já possui o lock. Ela não espera, falha imediatamente.
 
 Isso resolveu o meu problema de concorrência entre contêineres.
 
@@ -39,13 +39,13 @@ Use lock global quando:
 
 Fluxo da solução:
 
-1. Iniciar transação;
+1. Iniciar a transação;
 2. Tentar adquirir o advisory lock;
 3. Se falhar, fazer rollback e encerrar;
-4. Se obtiver o lock, executar o insert;
+4. Se obtiver o lock, executar os inserts;
 5. Commit.
 
-Quando a transação termina, o lock é liberado automaticamente.
+Obs: Quando a transação termina, o lock é liberado automaticamente.
 
 ### Passo 1 - crie uma library para o lock:
 
@@ -103,7 +103,7 @@ class PgLock
 
 ### O que esse código faz?
 
-* Converte sua chave textual em hash;
+* Converte a sua chave textual em hash;
 * Tenta adquirir o lock na transação atual;
 * Retorna true ou false.
 
@@ -195,7 +195,7 @@ Use quando:
 
 ### Impacto em performance
 
-O Advisory Lock é leve, não trava tabela. Ele trava apenas a chave lógica definida por você. O impacto é menor que LOCK TABLE.
+O Advisory Lock é leve, não trava a tabela, trava apenas a chave lógica definida por você. O impacto é menor que o LOCK TABLE.
 
 Você reduz:
 
