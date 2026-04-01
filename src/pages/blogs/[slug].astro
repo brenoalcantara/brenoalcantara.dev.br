@@ -4,6 +4,19 @@ import type { CollectionEntry } from 'astro:content';
 
 import Layout from '../../layouts/Layout.astro';
 
+import {
+  FacebookShareButton,
+  HackerNewsShareButton,
+  LinkedInShareButton,
+  MediumShareButton,
+  RedditShareButton,
+  ThreadsShareButton,
+  TwitterShareButton,
+  WhatsAppShareButton,
+  BlueskyShareButton,
+  SocialShare
+} from 'astro-social-share';
+
 export const getStaticPaths = async () => {
     const blogs = await getCollection("blogs");
     const paths = blogs.map(blog => {
@@ -26,6 +39,7 @@ type Props = {
 
 const {blog} = Astro.props;
 const {Content} = await blog.render();
+const BUTTONS = [TwitterShareButton, FacebookShareButton, LinkedInShareButton, WhatsAppShareButton]
 ---
 
 <Layout charset="UTF-8" 
@@ -35,6 +49,12 @@ const {Content} = await blog.render();
 >
     <section class="flex justify-center mt-12">
         <div id="markdown" class="prose prose-lg max-w-6xl px-4 overflow-visible relative mb-5">
+            <h1>{blog.data.title}</h1>
+            <SocialShare
+                buttons={BUTTONS}
+                description={blog.data.description}
+                title={blog.data.title}
+            />
             <Content />
         </div>
     </section>
