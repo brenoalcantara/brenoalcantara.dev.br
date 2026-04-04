@@ -1,0 +1,64 @@
+---
+title: "Tipo Enum no PostgreSQL"
+description: "Tipo Enum no PostgreSQL: para conjunto de dados fixo, ou que mude raramente."
+datetime: 2026-04-04T12:00:00
+image: ../images/blogs/PostgreSQL_Database.png
+url: "/blog/tipo-enum-postgresql"
+keywords: "enum, type enum, postgresql, tipo enum, create type, create enum, tipo enumerado"
+---
+
+Há alguns anos, usando o MySQL/MariaDB, tive a oportunidade de empregar o tipo enumerado (enum), que segundo a <a href="https://dev.mysql.com/doc/refman/9.6/en/enum.html" target="_blank">documentação</a>, é um objeto de string com um valor escolhido a partir de uma lista predefinida. Segue como exemplo uma tabela de pedidos com uma lista fixa de status:
+
+```sql
+CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    status ENUM('pendente', 'processando', 'enviado', 'entregue') DEFAULT 'pendente'
+);
+```
+
+No PostgreSQL, diferentemente do MySQL/MariaDB, é necessário criar o "tipo enum" da seguinte maneira:
+
+```sql
+CREATE TYPE status_pedido AS ENUM ('pendente', 'processando', 'enviado', 'entregue');
+
+CREATE TABLE pedidos (
+    id SERIAL PRIMARY KEY,
+    status status_pedido
+);
+```
+
+### Quando usar?
+
+O tipo enumerado é o ideal para conjunto de dados que dificilmente mudarão, como:
+
+* Gênero (M, F);
+* Status de pedido (já exemplificado acima);
+* Dias da semana ou meses do ano.
+
+### Direto da documentação:
+
+> Embora os tipos enum sejam destinados principalmente a conjuntos estáticos de valores, há suporte para adicionar novos valores a um tipo enum existente e para renomear valores (consulte <a href="https://www.postgresql.org/docs/current/sql-altertype.html" target="_blank">ALTER TYPE</a>). Os valores existentes não podem ser removidos de um tipo enum, nem a ordem de classificação desses valores pode ser alterada, a menos que o tipo enum seja descartado e recriado.
+
+Exemplos:
+
+* Adicionando um novo valor (com a opção de especificar a posição):
+
+```sql
+ALTER TYPE status_pedido ADD VALUE 'cancelado' AFTER 'entregue';
+```
+
+* Renomeando um valor:
+
+```sql
+ALTER TYPE status_pedido RENAME VALUE 'pago' TO 'confirmado';
+```
+
+## Observações:
+
+* O PostgreSQL faz diferença entre maiúsculas e minúsculas, "pendente" é diferente de "PENDENTE". O espaço em branco também é importante.
+
+## Referências
+
+> MySQL :: MySQL 9.6 Reference Manual :: 13.3.6 The ENUM Type. Disponível em: <a href="https://dev.mysql.com/doc/refman/9.6/en/enum.html" target="_blank">{'https://dev.mysql.com/doc/refman/9.6/en/enum.html'}</a>. Acesso em: 4 abr. 2026.
+
+> 8.7. Enumerated Types. Disponível em: <a href="https://www.postgresql.org/docs/current/datatype-enum.html" target="_blank">{'https://www.postgresql.org/docs/current/datatype-enum.html'}</a>. Acesso em: 4 abr. 2026.

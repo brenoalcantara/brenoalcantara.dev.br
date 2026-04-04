@@ -5,7 +5,7 @@ export interface Blog {
     data: {
         title: string;
         description: string;
-        datetime: string;
+        datetime: Date;
         image?: string;
     }
 }
