@@ -1,0 +1,51 @@
+---
+title: "Create Table as Select Dev Emocionado ..."
+description: "CREATE TABLE AS SELECT no PostgreSQL: para devs emocionados ou para devs apressados."
+datetime: 2026-04-15T12:00:00
+image: ../images/blogs/Create_Table_As_Select.png
+url: "/blog/create-table-as-select"
+keywords: "create table as select, create table, postgresql, select, sql, query, table, create, as"
+---
+
+Dias atrás, precisei fazer criar uma tabela no PostgreSQL a partir de uma consulta SQL. Tarefa fácil, não fosse a ansiedade ou a idade, rs. Abri o [DBeaver](https://dbeaver.io/) e executei no console:
+
+```sql
+CREATE TABLE nova_tabela AS
+SELECT 
+    coluna1
+    , coluna2
+FROM tabela_existente
+WHERE condicao;
+```
+
+Não haveria problemas, se não precisasse das constraints, mas precisei e, tive que recriar a tabela que já estava preenchida com novos dados (com ids nulos). Aqui, precisamos lembrar que é necessário criar os índices e as constraints manualmente após a criação da tabela.
+
+```sql
+-- Defino o ID como a Chave Primária
+ALTER TABLE nova_tabela
+    ADD PRIMARY KEY (id);
+```
+
+No meu caso, só precisei da chave primária e, a da tabela original é um tipo *SERIAL* (ao criar a nova tabela a partir do *SELECT* o tipo *SERIAL* é criado como inteiro), então é necessário criar a sequência e vinculá-la à coluna conforme os comandos abaixo:
+
+```sql
+-- Crio a sequência.
+CREATE SEQUENCE nova_tabela_id_seq;
+
+-- Ajusto a sequência para começar após o maior id existente.
+SELECT 
+    SETVAL('nova_tabela_id_seq', COALESCE(MAX(id), 0) + 1, false) 
+FROM nova_tabela;
+
+-- Defino a sequência como valor padrão da coluna id.
+ALTER TABLE nova_tabela 
+    ALTER COLUMN id SET DEFAULT NEXTVAL('nova_tabela_id_seq');
+
+-- Vinculo a sequência à tabela (para que seja excluída, se a tabela for).
+ALTER SEQUENCE nova_tabela_id_seq OWNED BY nova_tabela.id;
+
+```
+
+O comando *OWNED BY* cria um vínculo de dependência, pois no caso de deletar a tabela criada, a sequência também será removida deixando de ocupar espaço na base de dados.
+
+Obrigado e, até a próxima postagem!
