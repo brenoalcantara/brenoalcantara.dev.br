@@ -1,116 +1,124 @@
 {
-    "basic": {
-        "name": "Breno S. de Alcântara",
-        "job": "Engenheiro de Software",
-        "summary": "Desenvolvedor de software com mais de 10 anos de experiência, trabalhando em projetos utilizados por milhares de usuários. Atuação com PHP (Laravel, Slim, Codeigniter, Symfony), bancos de dados relacionais (PostgreSQL e MySQL), Shell Script (extração de dados) e liderança técnica com histórico de entrega de sistemas críticos, melhoria de processos e suporte à tomada de decisão.",
-        "cv_file_name": "Breno_Alcantara_Desenvolvedor_Senior_PHP.pdf"
+  "basic": {
+    "name": "Breno S. de Alcântara",
+    "job": "Engenheiro de Software",
+    "summary": "Desenvolvedor de software com mais de 10 anos de experiência, trabalhando em projetos utilizados por milhares de usuários. Atuação com PHP (Laravel, Slim, Codeigniter, Symfony), bancos de dados relacionais (PostgreSQL e MySQL), Shell Script (extração de dados) e liderança técnica com histórico de entrega de sistemas críticos, melhoria de processos e suporte à tomada de decisão.",
+    "cv_file_name": "Breno_Alcantara_Desenvolvedor_Senior_PHP.pdf"
+  },
+  "experiences": [
+    {
+      "title": "Desenvolvedor Sênior",
+      "sub_title": "3RWX Desenvolvimento de Sistemas.",
+      "years": "2022 - Presente",
+      "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Gestão Educacional, utilizado por uma administração municipal com mais de 70 unidades escolares. Desenvolvimento em PHP 7.4 (CodeIgniter 3) e PostgreSQL, com foco em estabilidade, escalabilidade e suporte a operações críticas do ambiente educacional."
     },
-    "experiences": [
-        {
-            "title": "Desenvolvedor Sênior",
-            "sub_title": "3RWX Desenvolvimento de Sistemas.",
-            "years": "2022 - Presente",
-            "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Gestão Educacional, utilizado por uma administração municipal com mais de 70 unidades escolares. Desenvolvimento em PHP 7.4 (CodeIgniter 3) e PostgreSQL, com foco em estabilidade, escalabilidade e suporte a operações críticas do ambiente educacional."
-        },
-        {
-            "title": "Analista Consultor Pleno III",
-            "sub_title": "TO Brasil",
-            "years": "2021 - 2022",
-            "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Business Intelligence, usado por diversas áreas estratégicas de uma grande corporação do setor varejista. Desenvolvimento em PHP 5.6, 7.0 (Laravel), MySQL e Shell Script com suporte à tomada de decisão por meio de relatórios analíticos, processando grandes volumes de dados."
-        },
-        {
-            "title": "Desenvolvedor Sênior",
-            "sub_title": "Blueshift Brasil",
-            "years": "2019 - 2021",
-            "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Business Intelligence, usado por diversas áreas estratégicas de uma grande corporação do setor varejista. Desenvolvimento em PHP 5.6, 7.0 (Laravel), MySQL e Shell Script com suporte à tomada de decisão por meio de relatórios analíticos, processando grandes volumes de dados."
-        },
-        {
-            "title": "Gerente de Desenvolvimento de Sistemas",
-            "sub_title": "Prefeitura Municipal de Maricá",
-            "years": "2017 - 2019",
-            "details": "Liderança da equipe de desenvolvimento de sistemas da Prefeitura de Maricá, coordenando dezenas de projetos internos e evoluções de sistemas corporativos. Atuação como membro do Comitê Gestor de Tecnologia da Informação, contribuindo para decisões estratégicas e padronização de soluções utilizadas por diferentes secretarias e órgãos municipais."
-        },
-        {
-            "title": "Analista de Sistemas",
-            "sub_title": "PSBI",
-            "years": "2016 - 2017",
-            "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Business Intelligence, usado por diversas áreas estratégicas de uma grande corporação do setor varejista. Desenvolvimento em PHP 5.6, 7.0 (Laravel), MySQL e Shell Script com suporte à tomada de decisão por meio de relatórios analíticos, processando grandes volumes de dados."
-        },
-        {
-            "title": "Programador",
-            "sub_title": "DBSeller Sistemas Integrados",
-            "years": "2015 - 2016",
-            "details": "Atuação no desenvolvimento e manutenção do Sistema de Gestão Municipal e-Cidade, usado por milhares de colaboradores da Prefeitura de Niterói, incluindo criação de funcionalidades, migração de dados e suporte técnico. Contribuição direta para melhor integração e eficiência dos processos administrativos municipais."
-        },
-        {
-            "title": "Programador PHP",
-            "sub_title": "Piloti",
-            "years": "2011 - 2015",
-            "details": "Atuação no desenvolvimento e manutenção de dezenas de sites institucionais e APIs RESTful, com o uso de PHP (Symfony e Codeigniter) e MySQL."
-        }
-    ],
-    "education": [
-        {
-            "title": "Engenharia de Software",
-            "sub_title": "Universidade Estácio de Sá",
-            "years": "2025 - 2028",
-            "details": "Curso que aborda a computação voltada para a especificação, desenvolvimento, manutenção e criação de softwares, com foco na organização, produtividade e qualidade organizacionais."
-        },
-        {
-            "title": "Treinamento MySQL",
-            "sub_title": "ADV Informática",
-            "years": "2012",
-            "details": "Curso intensivo destinado aos que desejam trabalhar com gerenciamento de dados (DBA)."
-        },
-        {
-            "title": "Desenvolvimento Web",
-            "sub_title": "SENAC RIO",
-            "years": "2009",
-            "details": "Curso Livre de Desenvolvimento Web, compreendendo desde os fundamentos do desenvolvimento front-end com HTML, CSS e Javascript, até técnicas avançadas de programação back-end com PHP, além do banco de dados MySQL."
-        }
-    ],
-    "projects": [
-        {
-            "imageUrl": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop",
-            "title": "hello.com",
-            "type": "Website",
-            "link": "https://github.com/wasutz/astro-resume-theme"
-        },
-        {
-            "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=764&auto=format&fit=crop",
-            "title": "Paul UI kit collections",
-            "type": "UI Kit",
-            "link": "https://github.com/wasutz/astro-resume-theme"
-        },
-        {
-            "imageUrl": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=764&auto=format&fit=crop",
-            "title": "paul.com",
-            "type": "Website",
-            "link": "https://github.com/wasutz/astro-resume-theme"
-        }
-    ],
-    "menuItems": [
-        {
-            "name": "Home",
-            "link": "/"
-        },
-        {
-            "name": "Blog",
-            "link": "/blogs"
-        }
-    ],
-    "socialLinks": [
-        {
-            "iconName": "Github",
-            "link": "https://github.com/brenoalcantara"
-        },
-        {
-            "iconName": "Linkedin",
-            "link": "https://br.linkedin.com/in/breno-silva-de-alcantara"
-        },
-        {
-            "iconName": "Whatsapp",
-            "link": "https://api.whatsapp.com/send?phone=5521981345475"
-        }
-    ]
+    {
+      "title": "Analista Consultor Pleno III",
+      "sub_title": "TO Brasil",
+      "years": "2021 - 2022",
+      "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Business Intelligence, usado por diversas áreas estratégicas de uma grande corporação do setor varejista. Desenvolvimento em PHP 5.6, 7.0 (Laravel), MySQL e Shell Script com suporte à tomada de decisão por meio de relatórios analíticos, processando grandes volumes de dados."
+    },
+    {
+      "title": "Desenvolvedor Sênior",
+      "sub_title": "Blueshift Brasil",
+      "years": "2019 - 2021",
+      "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Business Intelligence, usado por diversas áreas estratégicas de uma grande corporação do setor varejista. Desenvolvimento em PHP 5.6, 7.0 (Laravel), MySQL e Shell Script com suporte à tomada de decisão por meio de relatórios analíticos, processando grandes volumes de dados."
+    },
+    {
+      "title": "Gerente de Desenvolvimento de Sistemas",
+      "sub_title": "Prefeitura Municipal de Maricá",
+      "years": "2017 - 2019",
+      "details": "Liderança da equipe de desenvolvimento de sistemas da Prefeitura de Maricá, coordenando dezenas de projetos internos e evoluções de sistemas corporativos. Atuação como membro do Comitê Gestor de Tecnologia da Informação, contribuindo para decisões estratégicas e padronização de soluções utilizadas por diferentes secretarias e órgãos municipais."
+    },
+    {
+      "title": "Analista de Sistemas",
+      "sub_title": "PSBI",
+      "years": "2016 - 2017",
+      "details": "Atuação como prestador de serviços na manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Business Intelligence, usado por diversas áreas estratégicas de uma grande corporação do setor varejista. Desenvolvimento em PHP 5.6, 7.0 (Laravel), MySQL e Shell Script com suporte à tomada de decisão por meio de relatórios analíticos, processando grandes volumes de dados."
+    },
+    {
+      "title": "Programador",
+      "sub_title": "DBSeller Sistemas Integrados",
+      "years": "2015 - 2016",
+      "details": "Atuação no desenvolvimento e manutenção do Sistema de Gestão Municipal e-Cidade, usado por milhares de colaboradores da Prefeitura de Niterói, incluindo criação de funcionalidades, migração de dados e suporte técnico. Contribuição direta para melhor integração e eficiência dos processos administrativos municipais."
+    },
+    {
+      "title": "Programador PHP",
+      "sub_title": "Piloti",
+      "years": "2011 - 2015",
+      "details": "Atuação no desenvolvimento e manutenção de dezenas de sites institucionais e APIs RESTful, com o uso de PHP (Symfony e Codeigniter) e MySQL."
+    }
+  ],
+  "education": [
+    {
+      "title": "Engenharia de Software",
+      "sub_title": "Universidade Estácio de Sá",
+      "years": "2025 - 2028",
+      "details": "Curso que aborda a computação voltada para a especificação, desenvolvimento, manutenção e criação de softwares, com foco na organização, produtividade e qualidade organizacionais."
+    },
+    {
+      "title": "Treinamento MySQL",
+      "sub_title": "ADV Informática",
+      "years": "2012",
+      "details": "Curso intensivo destinado aos que desejam trabalhar com gerenciamento de dados (DBA)."
+    },
+    {
+      "title": "Desenvolvimento Web",
+      "sub_title": "SENAC RIO",
+      "years": "2009",
+      "details": "Curso Livre de Desenvolvimento Web, compreendendo desde os fundamentos do desenvolvimento front-end com HTML, CSS e Javascript, até técnicas avançadas de programação back-end com PHP, além do banco de dados MySQL."
+    }
+  ],
+  "projects": [
+    {
+      "imageUrl": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop",
+      "title": "hello.com",
+      "type": "Website",
+      "link": "https://github.com/wasutz/astro-resume-theme"
+    },
+    {
+      "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=764&auto=format&fit=crop",
+      "title": "Paul UI kit collections",
+      "type": "UI Kit",
+      "link": "https://github.com/wasutz/astro-resume-theme"
+    },
+    {
+      "imageUrl": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=764&auto=format&fit=crop",
+      "title": "paul.com",
+      "type": "Website",
+      "link": "https://github.com/wasutz/astro-resume-theme"
+    }
+  ],
+  "menuItems": [
+    {
+      "name": "Home",
+      "link": "/"
+    },
+    {
+      "name": "Blog",
+      "link": "/blogs"
+    }
+  ],
+  "socialLinks": [
+    {
+      "iconName": "Instagram",
+      "link": "https://www.instagram.com/3rwxsistemas"
+    },
+    {
+      "iconName": "Github",
+      "link": "https://github.com/brenoalcantara"
+    },
+    {
+      "iconName": "Linkedin",
+      "link": "https://br.linkedin.com/in/breno-silva-de-alcantara"
+    },
+    {
+      "iconName": "Whatsapp",
+      "link": "https://api.whatsapp.com/send?phone=5521981345475"
+    },
+    {
+      "iconName": "Mail",
+      "link": "mailto:contato@3rwx.com.br"
+    }
+  ]
 }
