@@ -1,0 +1,96 @@
+---
+title: "Desafio do Palíndromo com Javascript"
+description: "Verificando Strings Palíndromas com Javascript."
+datetime: 2026-05-29T12:00:00
+image: /src/assets/images/blogs/Palindromo.png
+url: "/blog/desafio-do-palindromo"
+keywords: "palindromo, desafio do palindromo, algoritmo, programacao, logica, programação, javascript, logica de programacao, teste de algoritmo"
+---
+
+Palíndromo, segundo a [Wikipedia](https://pt.wikipedia.org/wiki/Pal%C3%ADndromo), é uma palavra , frase ou número, que lida do começo ao fim ou do fim ao começo, produz o mesmo resultado (ex: arara, radar, reviver). Na programação o desafio consiste em inverter a string e compará-la com a original, ignorando espaços, pontuações e letras maiúsculas/minúsculas.
+
+Hoje, demonstrarei o desafio com uma abordagem em javascript, posteriormente abordarei com outras linguagens e de maneiras diferentes. Como exemplo, usarei a seguinte frase:
+
+> Socorram-me, subi no ônibus em Marrocos!
+
+Primeiro, peguei a frase acima e a coloquei numa constante:
+
+```javascript
+const texto = "Socorram-me, subi no ônibus em Marrocos";
+```
+
+Depois, usei a função [normalize](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize), com o parâmetro "NFD", para separar as letras dos acentos . Ex: "á" vira "a" + "´". 
+E assim, apliquei um [replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) para  remover os acentos separados.
+
+```javascript
+const formatado = texto.normalize('NFD').replace(/\p{Diacritic}/gu, ''));
+// O código acima produz isso: 'Socorram-me, subi no onibus em Marrocos'
+```
+
+Com o texto sem os acentos, basta remover os espaços mantendo apenas números e letras, aplicando um [toLowerCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase).
+
+```javascript
+const formatado = texto.normalize('NFD')
+    .replace(/\p{Diacritic}/gu, ''))
+    .replace(/[^a-zA-Z0-9]/g, '')
+    .toLowerCase(); 
+// O código acima produz: ''socorrammesubinoonibusemmarrocos''
+```
+
+Agora que tenho o texto tratado, armazenado na variável "formatado", vou usar o seu conteúdo para inverter a string, para então fazer a comparação entre as 2:
+
+```javascript
+const invertida = formatado
+    .split("")
+    .reverse()
+    .join("");
+// O código acima também produz: ''socorrammesubinoonibusemmarrocos''
+```
+
+Adicionei um [split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) para dividir essa string e retornar um array, depois um [reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) para inverter o array retornado e, finalmente, um [join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join), para retornar esse array como string. Pronto! O código completo fica assim:
+
+```javascript
+const texto = "arara"
+
+const formatado = texto
+    .normalize('NFD') 
+    .replace(/\p{Diacritic}/gu, '') 
+    .replace(/[^a-zA-Z0-9]/g, '')
+    .toLowerCase(); 
+
+const invertida = formatado
+    .split("")
+    .reverse()
+    .join("");
+
+if(formatado === invertida) {
+    console.log('É palíndromo.');
+} else {
+    console.log('Não é palíndromo.');
+}
+// 'É palíndromo.'
+```
+
+```javascript
+const texto = "código"
+
+const formatado = texto
+    .normalize('NFD') 
+    .replace(/\p{Diacritic}/gu, '') 
+    .replace(/[^a-zA-Z0-9]/g, '')
+    .toLowerCase(); 
+
+const invertida = formatado
+    .split("")
+    .reverse()
+    .join("");
+
+if(formatado === invertida) {
+    console.log('É palíndromo.');
+} else {
+    console.log('Não é palíndromo.');
+}
+// 'Não é palíndromo.'
+```
+
+E, é isso! Obrigado e, até a próxima postagem!
