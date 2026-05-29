@@ -34,7 +34,7 @@ const formatado = texto.normalize('NFD')
     .replace(/\p{Diacritic}/gu, ''))
     .replace(/[^a-zA-Z0-9]/g, '')
     .toLowerCase(); 
-// O código acima produz: ''socorrammesubinoonibusemmarrocos''
+// O código acima produz: 'socorrammesubinoonibusemmarrocos'
 ```
 
 Agora que tenho o texto tratado, armazenado na variável "formatado", vou usar o seu conteúdo para inverter a string, para então fazer a comparação entre as 2:
@@ -44,7 +44,7 @@ const invertida = formatado
     .split("")
     .reverse()
     .join("");
-// O código acima também produz: ''socorrammesubinoonibusemmarrocos''
+// O código acima também produz: 'socorrammesubinoonibusemmarrocos'
 ```
 
 Adicionei um [split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) para dividir essa string e retornar um array, depois um [reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) para inverter o array retornado e, finalmente, um [join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join), para retornar esse array como string. Pronto! O código completo fica assim:
