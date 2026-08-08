@@ -10,7 +10,7 @@
       "title": "Desenvolvedor Sênior",
       "sub_title": "3RWX Desenvolvimento de Sistemas.",
       "years": "2022 - Presente",
-      "details": "Atuação como prestador de serviços: \n\nNa manutenção evolutiva e desenvolvimento de novas funcionalidades em Sistema de Gestão Educacional, utilizado por uma administração municipal com mais de 70 unidades escolares. Desenvolvimento em PHP 7.4 (CodeIgniter 3) e PostgreSQL, com foco em estabilidade, escalabilidade e suporte a operações críticas do ambiente educacional.\n\nManutenção evolutiva de portais web, do PHP 7.4 e Laravel 8 para PHP 8.5 e Laravel 13, usados por outra administração pública municipal e sua população (aproximadamente 190 mil), com foco em segurança e estabilidade."
+      "details": "Atuação como prestador de serviços \n\nGestão Educacional: Responsável pela evolução e desenvolvimento de recursos em sistema de gestão utilizado por mais de 70 escolas da rede municipal. Utilização de PHP 7.4 (CodeIgniter 3) e PostgreSQL, garantindo alta disponibilidade para operações críticas.\n\nPortais de Atendimento ao Cidadão: Manutenção evolutiva de portais web públicos para uma população de aproximadamente 190 mil habitantes. Foco em segurança da informação, estabilidade e transição de arquitetura (PHP/Laravel)."
     },
     {
       "title": "Analista Consultor Pleno III",
