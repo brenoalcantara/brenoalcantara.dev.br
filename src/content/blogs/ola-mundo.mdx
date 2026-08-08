@@ -7,9 +7,12 @@ url: "/blog/ola-mundo"
 keywords: "desenvolvimento web, astro, astro resume theme, blog pessoal, tecnologia, open source, php, postgresql, mysql, shell"
 ---
 
+import helloWorld from '../../assets/images/blogs/hello-world.jpg';
+import future from '../../assets/images/blogs/homem-no-campo-de-grama-olhando-para-o-ceu.jpg';
+
 ## APRESENTAÇÃO
 
-![Olá mundo!](/src/assets/images/blogs/hello-world.jpg)
+<img src={helloWorld.src} alt="Olá mundo!" />
 <p class="text-center"><small>Foto de <a href="https://unsplash.com/pt-br/@kobuagency?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">KOBU Agency</a> na <a href="https://unsplash.com/pt-br/fotografias/texto-hello-world-67L18R4tW_w?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></small></p>
 
 Olá, sejam bem-vindos ao meu blog pessoal! 
@@ -55,7 +58,7 @@ Embora o ecossistema do <a href="https://astro.build/" target="_blank">Astro</a>
 
 ## PERSPECTIVAS FUTURAS
 
-![Homem no campo de grama olhando para o céu.](/src/assets/images/blogs/homem-no-campo-de-grama-olhando-para-o-ceu.jpg)
+<img src={future.src} alt="Homem no campo de grama olhando para o céu." />
 <p class="text-center"><small>Foto de <a href="https://unsplash.com/pt-br/@bendavisual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Benjamin Davies</a> na <a href="https://unsplash.com/pt-br/fotografias/homem-no-campo-de-grama-olhando-para-o-ceu-JrZ1yE1PjQ0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></small></p>
 
 Meu objetivo com este blog é construir uma fonte de informação útil para mim, registrando minhas experiências para posterior consulta e, para quem busca evoluir no desenvolvimento de software. Nas próximas publicações, trarei tutoriais focados em <a href="https://www.php.net/" target="_blank">PHP</a> legado e moderno, técnicas para otimizar consultas em <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a> e <a href="https://www.mysql.com/" target="_blank">MySQL</a>, além de dicas práticas sobre infraestrutura, integração contínua e automação de tarefas cotidianas com <a href="https://pt.wikipedia.org/wiki/Shell_script" target="_blank">Shell Script</a> e <a href="https://www.python.org/" target="_blank">Python</a>.
