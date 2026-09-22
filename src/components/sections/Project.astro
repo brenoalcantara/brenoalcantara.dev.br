@@ -1,12 +1,14 @@
 ---
 const { imageUrl, title, type, link } = Astro.props;
+
+const cleanImagePath = `/src/assets/images/${imageUrl.split('/').pop()}`;
 ---
 
 <a href={link} target="_blank" rel="noopener noreferrer">
     <div class="relative overflow-hidden rounded-lg cursor-pointer h-64 group">
         <div
             class="absolute inset-0 bg-cover transition-transform duration-700 group-hover:scale-110"
-            style={`background-position: center; background-image: url('${imageUrl}');`}>
+            style={`background-position: center; background-image: url('${cleanImagePath}');`}>
         </div>
 
         <div
