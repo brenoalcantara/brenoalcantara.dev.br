@@ -71,13 +71,13 @@
   ],
   "projects": [
       {
-        "imageUrl": "./assets/images/ekipcontroller.png",
+        "imageUrl": "../../assets/images/ekipcontroller.png",
         "title": "Ekip Controller",
         "type": "Software para Gestão de Sistemas de Detecção e Alarme de Incêndio.",
         "link": "https://ekipcontroller.ekiper.com.br/"
       },
       {
-      "imageUrl": "./assets/images/3rwx.png",
+      "imageUrl": "../../assets/images/3rwx.png",
       "title": "3RWX Sistemas",
       "type": "Website",
       "link": "https://3rwx.com.br"
